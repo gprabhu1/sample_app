@@ -1,5 +1,11 @@
 SampleApp::Application.routes.draw do
+  resources :entries
+
+
+  root :to => 'entries#index'
   root to: 'static_pages#home'  
+  match '/admin',   to: 'entries#admin'
+  match '/winner',  to: 'entries#winner'
   match '/signup',  to: 'users#new'
   match '/help', to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

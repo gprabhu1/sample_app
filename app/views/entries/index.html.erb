@@ -1,0 +1,35 @@
+<div id="container">
+<h1>Raffler</h1>
+
+<form action="/entries" class="new_person" id="new_person" method="post">
+  <input id="entry_name" name="entry[name]" size="50" type="text" />
+  <input name="commit" type="submit" value="Add" />
+</form>
+
+<p id="notice"><%= flash[:notice] %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Winner</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.name %></td>
+    <td><div class="winner" >
+        <% if (entry.winner == true) %>
+        <%= "WINNER" %>
+        <% end %> 
+    </div></td>
+  </tr>
+<% end %>
+
+<td><%= button_to "Select Winner", {:controller => 'entries', :action => 'winner'} %></td>
+</table>
+
+<br />
+</div>

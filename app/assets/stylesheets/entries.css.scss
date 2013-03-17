@@ -1,0 +1,55 @@
+// Place all the styles related to the entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#container {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+form input {
+  font-size: 20px;
+}
+form input[type='text'] {
+  width: 535px;
+}
+form input[type='submit'], #draw {
+  -webkit-appearance: caret;
+	font-size: 14px;
+  font-size: 13px;
+  padding: 5px 10px 6px 10px;
+  font-weight: bold;
+  border: 1px solid #466A98;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #FFF;
+  background: #24882B;
+  background: -webkit-gradient(linear, left top, left bottom, from(#32BE39), to(#247B28));
+  background: -moz-linear-gradient(top,  #32BE39,  #247B28);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32BE39', endColorstr='#247B28');
+  text-decoration: none;
+  text-shadow: 0 -1px 0 #036;
+  text-align: middle;
+  vertical-align: top;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+td {
+  border-bottom: solid 1px #CCC;
+  padding: 10px 10px;
+  width: 100%;
+  font-size: 16px;
+  position: relative;
+}
+
+.winner{color:red; font-weight:bold;}
+
