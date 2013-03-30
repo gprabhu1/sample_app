@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   resources :entries
+  resources :users
 
 
   root :to => 'entries#index'
