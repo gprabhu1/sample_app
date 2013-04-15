@@ -88,6 +88,7 @@ describe "UserPages" do
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
+#        fill_in "Admin",        with: "false"
       end
 
       it "should create a user" do
@@ -102,6 +103,14 @@ describe "UserPages" do
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
         it { should have_link('Sign out') }
       end
+    end
+  end
+
+  describe "show" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit edit_user_path(user)
     end
   end
 
@@ -131,7 +140,7 @@ describe "UserPages" do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in "Confirmation", with: user.password
         click_button "Save changes"
       end
 
